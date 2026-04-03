@@ -45,10 +45,9 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  ::-webkit-scrollbar { width: 6px; height: 6px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: var(--border-default); border-radius: 10px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--brand-secondary); }
+  /* Hide scrollbars everywhere while keeping scroll functionality */
+  * { scrollbar-width: none; }
+  *::-webkit-scrollbar { display: none; }
 }
 
 @layer components {
@@ -100,6 +99,17 @@
 .leaflet-popup-close-button:hover { color: var(--brand-primary) !important; }
 .leaflet-popup-content { margin: 10px 14px; }
 .leaflet-marker-icon.leaflet-div-icon { background: transparent; border: none; }
+
+/* ── Desktop: reset sheet transform ── */
+@media (min-width: 768px) {
+  .bottom-sheet-reset {
+    transform: none !important;
+    height: 100% !important;
+    transition: none !important;
+    position: relative !important;
+    inset: auto !important;
+  }
+}
 
 /* ── Location pin pulse ── */
 @keyframes msafe-pulse {
