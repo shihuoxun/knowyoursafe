@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local db dump (keep off GitHub)
+dump.sql
+build-log.txt
+build-err.txt
