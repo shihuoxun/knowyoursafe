@@ -116,7 +116,7 @@ export default function SafetyPanel({
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex-1 overflow-y-auto pr-1 -mr-1 space-y-4 pb-28 md:pb-0">
+      <div className="flex-1 space-y-4 pb-2">
 
         {/* ── Safety score card ── */}
         <div className="card p-5">
@@ -321,7 +321,7 @@ export default function SafetyPanel({
       </div>
 
       {/* ── Sticky bottom buttons ── */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-md border-t border-[var(--border-subtle)] md:relative md:bg-transparent md:border-t-0 md:p-0 md:pt-4 flex gap-3 z-50">
+      <div className="flex-shrink-0 p-4 pt-3 bg-white/95 backdrop-blur-md border-t border-[var(--border-subtle)] flex gap-3">
         <button onClick={onReportClick} className="flex-1 btn-primary py-3 text-sm">
           <Siren weight="fill" size={16} className="mr-2" />
           {zh ? '举报隐患' : 'Report Issue'}
