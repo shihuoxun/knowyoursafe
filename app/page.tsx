@@ -15,7 +15,7 @@ const DEFAULT_CENTER: [number, number] = [-37.8136, 144.9631]
 
 // Mobile bottom sheet
 const SHEET_VH  = 80    // total sheet height in dvh
-const PEEK_PX   = 96    // visible height when collapsed (handle + report button)
+const PEEK_PX   = 140   // visible height when collapsed (handle + report button)
 const DRAG_OPEN_THRESHOLD  = 60
 const DRAG_CLOSE_THRESHOLD = 80
 

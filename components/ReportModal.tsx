@@ -82,20 +82,22 @@ export default function ReportModal({ isOpen, lat, lon, lang, tr, onClose, onSub
     >
       <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-[4px]" onClick={onClose} />
 
-      <div className="relative w-full md:w-[500px] bg-white rounded-t-3xl md:rounded-3xl overflow-hidden shadow-2xl">
+      <div className="relative w-full md:w-[500px] bg-white rounded-t-3xl md:rounded-3xl shadow-2xl flex flex-col" style={{ maxHeight: '92dvh' }}>
         {/* Top gradient bar */}
-        <div className="h-1 w-full" style={{ backgroundImage: 'var(--brand-gradient)' }} />
+        <div className="h-1 w-full flex-shrink-0" style={{ backgroundImage: 'var(--brand-gradient)' }} />
 
-        <div className="p-6">
-          <div className="flex justify-between items-center mb-5">
-            <h2 className="text-xl font-bold text-[var(--text-primary)]">{tr.reportTitle}</h2>
-            <button
-              onClick={onClose}
-              className="p-2 rounded-full text-[var(--text-secondary)] hover:bg-[var(--surface-subtle)] hover:text-[var(--brand-primary)] transition-colors"
-            >
-              <X weight="bold" size={20} />
-            </button>
-          </div>
+        {/* Header — sticky, always visible */}
+        <div className="flex justify-between items-center px-5 pt-4 pb-3 flex-shrink-0 border-b border-[var(--border-subtle)]">
+          <h2 className="text-lg font-bold text-[var(--text-primary)]">{tr.reportTitle}</h2>
+          <button
+            onClick={onClose}
+            className="p-2 rounded-full text-[var(--text-secondary)] hover:bg-[var(--surface-subtle)] hover:text-[var(--brand-primary)] transition-colors flex-shrink-0"
+          >
+            <X weight="bold" size={20} />
+          </button>
+        </div>
+
+        <div className="overflow-y-auto flex-1 px-5 pb-6 pt-4">
 
           <p className="text-xs text-[var(--text-muted)] mb-5">
             {tr.locationLabel}: {lat.toFixed(5)}, {lon.toFixed(5)} · {tr.anonymous}
@@ -141,7 +143,7 @@ export default function ReportModal({ isOpen, lat, lon, lang, tr, onClose, onSub
             </div>
 
             {/* Description */}
-            <div className="mb-6">
+            <div className="mb-4">
               <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">{tr.descLabel}</label>
               <textarea
                 rows={3}
@@ -178,7 +180,7 @@ export default function ReportModal({ isOpen, lat, lon, lang, tr, onClose, onSub
               )}
             </button>
           </form>
-        </div>
+        </div>{/* end scrollable body */}
       </div>
     </div>
   )

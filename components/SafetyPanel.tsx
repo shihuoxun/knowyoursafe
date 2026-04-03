@@ -120,13 +120,13 @@ export default function SafetyPanel({
 
         {/* ── Safety score card ── */}
         <div className="card p-5">
-          <div className="flex justify-between items-start mb-1">
-            <div>
-              <h2 className="text-lg font-bold text-[var(--text-primary)] leading-tight">{areaName}</h2>
+          <div className="flex justify-between items-start gap-3 mb-1">
+            <div className="min-w-0">
+              <h2 className="text-lg font-bold text-[var(--text-primary)] leading-tight truncate">{areaName}</h2>
               <p className="text-[var(--text-secondary)] text-sm mt-0.5">{loading ? tr.loading : gradeMsg}</p>
             </div>
             {safety && (
-              <div className="rounded-full px-3 py-1 text-sm font-bold text-white" style={{ background: gradeColor }}>
+              <div className="rounded-full px-2.5 py-1 text-xs font-bold text-white whitespace-nowrap flex-shrink-0" style={{ background: gradeColor }}>
                 {zh ? '等级' : 'Grade'} {safety.grade}
               </div>
             )}
